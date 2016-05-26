@@ -40,7 +40,7 @@ abstract class ActiveRecordBase extends CI_Model
         $result = $this->db->where($field_name, $field_value)
             ->get($this->table_name);
 
-        if( $result->num_rows() )
+        if( $result && $result->num_rows() )
         {
             $data = $result->result_array();
             return $data;
@@ -63,7 +63,7 @@ abstract class ActiveRecordBase extends CI_Model
                             ->get($this->table_name);
 
 
-        if( $result->num_rows() )
+        if( $result && $result->num_rows() )
         {
             $data = $result->result_array();
             return $data[0];
@@ -125,7 +125,7 @@ abstract class ActiveRecordBase extends CI_Model
      * Logical delete. It only changes its status_id to a deleted state.
      * @param $id
      */
-    public function delete($id)
+    /*public function delete($id)
     {
 
         $deleted_id = $this->getDeletedStatusId();
@@ -135,7 +135,7 @@ abstract class ActiveRecordBase extends CI_Model
                                 $data
         );
 
-    }
+    }*/
 
     /**
      * Physical delete. It Deletes the record from the DB.
@@ -152,7 +152,7 @@ abstract class ActiveRecordBase extends CI_Model
      * Returns the id of the delete status
      * @return null or active_id
      */
-    public function getDeletedStatusId()
+    /*public function getDeletedStatusId()
     {
 
         $result = $this->db ->where(    'name',
@@ -170,13 +170,13 @@ abstract class ActiveRecordBase extends CI_Model
         }
 
         return NULL;
-    }
+    }*/
 
     /**
      * Returns the id of the active status
      * @return null or active_id
      */
-    public function getActiveStatusId()
+    /*public function getActiveStatusId()
     {
 
         $this->db->reset_query();
@@ -196,6 +196,6 @@ abstract class ActiveRecordBase extends CI_Model
         }
 
         return NULL;
-    }
+    }*/
 
 }
