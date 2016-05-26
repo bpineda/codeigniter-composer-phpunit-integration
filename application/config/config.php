@@ -27,7 +27,7 @@ if(ENVIRONMENT == 'testing')
 {
 
   $local = true;
-  $config['base_url'] = 'http://localhost/';
+  $config['base_url'] = '';
 
 }else
 {
