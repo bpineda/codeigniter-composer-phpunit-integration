@@ -1,0 +1,2 @@
+#!/bin/sh
+./vendor/phpunit/phpunit/phpunit --filter '.' MigrationUtilities application/tests/MigrationUtilities.php
